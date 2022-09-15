@@ -1,14 +1,15 @@
 using System;
 using System.Threading.Tasks;
 using SuiDotNet.Client;
+using SuiDotNet.Client.Requests;
 using UnityEngine;
 
 public class SuiGetTransactionsTest : MonoBehaviour
 {
     public SuiJsonClient Client;
     public Task<object> GetTransactionTask;
-    public Task<object[]> GetTransactionsForAddressTask;
-    public Task<object[]> GetTransactionsForObjectTask;
+    public Task<SequencedTransaction[]> GetTransactionsForAddressTask;
+    public Task<SequencedTransaction[]> GetTransactionsForObjectTask;
 
     // substitute your preferred Sui node endpoint here, either in code or in Unity inspector
     public String SuiNodeUrl = "http://127.0.0.1:9000";
@@ -38,14 +39,14 @@ public class SuiGetTransactionsTest : MonoBehaviour
         {
             Debug.Log("transactions for address count: " + GetTransactionsForAddressTask.Result.Length);
             foreach (var addrTx in GetTransactionsForAddressTask.Result)
-                Debug.Log("get transactions for address result: " + addrTx);
+                Debug.Log("get transactions for address result: [" + addrTx.SequenceNumber + ", " + addrTx.Digest + "]");
             GetTransactionsForAddressTask = null;
         }
         if (GetTransactionsForObjectTask is {IsCompleted: true})
         {
             Debug.Log("transactions for object count: " + GetTransactionsForObjectTask.Result.Length);
             foreach (var objTx in GetTransactionsForObjectTask.Result)
-                Debug.Log("get transactions for object result: " + objTx);
+                Debug.Log("get transactions for object result: [" + objTx.SequenceNumber + ", " + objTx.Digest + "]");
             GetTransactionsForObjectTask = null;
         }
     }
