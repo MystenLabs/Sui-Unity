@@ -315,8 +315,10 @@ GameObject:
   - component: {fileID: 1891552721}
   - component: {fileID: 1891552720}
   - component: {fileID: 1891552719}
+  - component: {fileID: 1891552724}
+  - component: {fileID: 1891552723}
   m_Layer: 0
-  m_Name: ScratchPad
+  m_Name: RPC Tests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,7 +346,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891552716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d4beb797d9d24a6da58b12a0dbfceed, type: 3}
   m_Name: 
@@ -357,7 +359,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891552716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 875920ff2aa04afb88e86586021b6b7d, type: 3}
   m_Name: 
@@ -370,7 +372,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891552716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4759e56937694f71a74a24817650d684, type: 3}
   m_Name: 
@@ -383,7 +385,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891552716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fba40167e4b846d6a9a05b6d3c1ae862, type: 3}
   m_Name: 
@@ -402,3 +404,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SuiNodeUrl: http://127.0.0.1:9000
+--- !u!114 &1891552723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891552716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c256852ca98450186e3a69e5323a776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1891552724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891552716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e616e076214b4cbf92908a378a089755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
