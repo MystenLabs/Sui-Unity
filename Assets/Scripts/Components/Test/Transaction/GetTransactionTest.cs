@@ -25,9 +25,9 @@ public class GetTransactionTest : MonoBehaviour
             return;
         
         var result = GetTransactionTask.Result;
-        Debug.Log("tx - result:  " + result);
-        Debug.Log("tx, time: " + result.Timestamp);
-        Debug.Log("tx, parsed: " + result.ParsedData);
+        Debug.Log("tx - time: " + result.Timestamp);
+        if(result.ParsedData != null)
+            Debug.Log("tx - parsedData: " + result.ParsedData);
         
         var effects = result.Effects;
         Debug.Log("tx - effects.status.status: " + effects.Status.Status);
@@ -41,17 +41,8 @@ public class GetTransactionTest : MonoBehaviour
         
         LogAll(effects.Events, "effects.events members follow...");
         
-        Debug.Log("tx - cert:  " + result.Certificate);
-        Debug.Log("tx - cert.authSignInfo:  " + ((JObject)result.Certificate)["authSignInfo"]);
-        Debug.Log("tx - cert.data:  " + ((JObject)result.Certificate)["data"]);
-
-        /*
         var cert = result.Certificate;
-        Debug.Log("tx - cert, digest: " + cert.TransactionDigest);  
-        Debug.Log("tx - cert, signature: " + cert.Signature);
-        Debug.Log("tx - cert, data: " + cert.Data);
-        Debug.Log("tx - cert, authSignInfo:\n" + cert.AuthoritySignInfo);
-        */
+        Debug.Log("tx - cert:  " + cert);
 
         GetTransactionTask = null;
     }
