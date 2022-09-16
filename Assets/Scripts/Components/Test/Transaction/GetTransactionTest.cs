@@ -9,12 +9,12 @@ public class GetTransactionTest : MonoBehaviour
     public Task<SuiTransactionResponse> GetTransactionTask;
 
     // substitute your transaction digest here
-    public String TestTransactionDigest = "XbyTWT8UZ1qXEM4/sdRLOzF+uwtHEEjuoj8m0VKVZFQ=";
+    public String Digest = "XbyTWT8UZ1qXEM4/sdRLOzF+uwtHEEjuoj8m0VKVZFQ=";
 
     void Start()
     {
         var client = gameObject.GetComponent<SuiClient>();
-        GetTransactionTask = client.Rpc.GetTransactionWithEffects(TestTransactionDigest);
+        GetTransactionTask = client.Rpc.GetTransactionWithEffects(Digest);
     }
 
     void Update()
