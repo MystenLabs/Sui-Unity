@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using SuiDotNet.Client.Requests;
@@ -24,33 +25,44 @@ public class GetTransactionTest : MonoBehaviour
             return;
         
         var result = GetTransactionTask.Result;
+        Debug.Log("tx - result:  " + result);
+        Debug.Log("tx, time: " + result.Timestamp);
+        Debug.Log("tx, parsed: " + result.ParsedData);
         
-        Debug.Log("get tx - result:  " + result);
-        Debug.Log("get tx, time: " + result.Timestamp);
-        Debug.Log("get tx, parsed: " + result.ParsedData);
+        var effects = result.Effects;
+        Debug.Log("tx - effects.status.status: " + effects.Status.Status);
+        Debug.Log("tx - effects.transactionDigest: " + effects.TransactionDigest);
+        Debug.Log("tx - effects.gasUsed: " + effects.GasUsed);
+        Debug.Log("tx - effects.gasObject: " + effects.GasObject);
+
+        LogAll(effects.Created, "effects.created members follow...");
+        LogAll(effects.Deleted, "effects.deleted members follow...");
+        LogAll(effects.Mutated, "effects.mutated members follow...");
         
-        //Debug.Log("get tx - effects: " + result.Effects);
-        Debug.Log("get tx - effects.status.status: " + result.Effects.Status.Status);
-        Debug.Log("get tx - effects.transactionDigest: " + result.Effects.TransactionDigest);
-        Debug.Log("get tx - effects.gasUsed: " + result.Effects.GasUsed);
-        Debug.Log("get tx - effects.gasObject: " + result.Effects.GasObject);
-        Debug.Log("get tx - effects.created: " + result.Effects.Created);
-        Debug.Log("get tx - effects.mutated: " + result.Effects.Mutated);
-        Debug.Log("get tx - effects.events: " + result.Effects.Events);
+        LogAll(effects.Events, "effects.events members follow...");
         
-        Debug.Log("get tx - cert TYPE:  " + result.Certificate.GetType());
-        Debug.Log("get tx - cert:  " + result.Certificate);
-        Debug.Log("get tx - cert.authSignInfo:  " + ((JObject)result.Certificate)["authSignInfo"]);
-        Debug.Log("get tx - cert.data:  " + ((JObject)result.Certificate)["data"]);
+        Debug.Log("tx - cert:  " + result.Certificate);
+        Debug.Log("tx - cert.authSignInfo:  " + ((JObject)result.Certificate)["authSignInfo"]);
+        Debug.Log("tx - cert.data:  " + ((JObject)result.Certificate)["data"]);
 
         /*
         var cert = result.Certificate;
-        Debug.Log("get tx - cert, digest: " + cert.TransactionDigest);  
-        Debug.Log("get tx - cert, signature: " + cert.Signature);
-        Debug.Log("get tx - cert, data: " + cert.Data);
-        Debug.Log("get tx - cert, authSignInfo:\n" + cert.AuthoritySignInfo);
+        Debug.Log("tx - cert, digest: " + cert.TransactionDigest);  
+        Debug.Log("tx - cert, signature: " + cert.Signature);
+        Debug.Log("tx - cert, data: " + cert.Data);
+        Debug.Log("tx - cert, authSignInfo:\n" + cert.AuthoritySignInfo);
         */
 
         GetTransactionTask = null;
+    }
+
+    static void LogAll<T>(T[] data, string initialLog = null)
+    {
+        if (data is not {Length: > 0}) 
+            return;
+        if(initialLog != null)
+            Debug.Log(initialLog);
+        foreach (var d in data)
+            Debug.Log(d);
     }
 }
