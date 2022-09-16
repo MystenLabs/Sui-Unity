@@ -31,16 +31,21 @@ public class GetTransactionsBatchTest : MonoBehaviour
         for (var i = 0; i < result.Length; i++)
         {
             var tx = result[i];
+            Debug.Log($"get tx batch {i}, effects: " + tx.Effects);
+            Debug.Log($"get tx batch {i}, cert: " + tx.Certificate);
+            
+            /*
             var cert = tx.Certificate;
 
             Debug.Log($"get tx batch {i}, digest: " + cert.TransactionDigest);
             Debug.Log($"get tx batch {i}, signature: " + cert.Signature);
             Debug.Log($"get tx batch {i}, data: " + cert.Data);
             Debug.Log($"get tx batch {i}, authSignInfo:\n" + cert.AuthoritySignInfo);
+            */
             
             Debug.Log($"get tx batch {i}, time: " + tx.Timestamp);
-            Debug.Log($"get tx batch {i}, effects.created length: " + tx.Effects.Created?.Length);
-            Debug.Log($"get tx batch {i}, effects.mutated length: " + tx.Effects.Mutated?.Length);
+            //Debug.Log($"get tx batch {i}, effects.created length: " + tx.Effects.Created?.Length);
+            //Debug.Log($"get tx batch {i}, effects.mutated length: " + tx.Effects.Mutated?.Length);
             Debug.Log($"get tx batch {i}, parsed: " + tx.ParsedData);
         }
 

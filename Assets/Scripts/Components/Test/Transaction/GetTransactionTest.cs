@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 using SuiDotNet.Client.Requests;
 using UnityEngine;
 
@@ -23,15 +24,28 @@ public class GetTransactionTest : MonoBehaviour
             return;
         
         var result = GetTransactionTask.Result;
+        
+        Debug.Log("get tx - result:  " + result);
+        Debug.Log("get tx, time: " + result.Timestamp);
+        Debug.Log("get tx, parsed: " + result.ParsedData);
+        Debug.Log("get tx - effects: " + result.Effects);
+        
+        Debug.Log("get tx - cert TYPE:  " + result.Certificate.GetType());
+        Debug.Log("get tx - cert:  " + result.Certificate);
+        Debug.Log("get tx - cert.authSignInfo:  " + ((JObject)result.Certificate)["authSignInfo"]);
+        Debug.Log("get tx - cert.data:  " + ((JObject)result.Certificate)["data"]);
+
+        /*
+
         var cert = result.Certificate;
-        Debug.Log("get tx - cert, digest: " + cert.TransactionDigest);
+        Debug.Log("get tx - cert, digest: " + cert.TransactionDigest);  
         Debug.Log("get tx - cert, signature: " + cert.Signature);
         Debug.Log("get tx - cert, data: " + cert.Data);
         Debug.Log("get tx - cert, authSignInfo:\n" + cert.AuthoritySignInfo);
-            
-        Debug.Log("get transaction, time: " + result.Timestamp);
-        Debug.Log("get transaction, effects: " + JsonUtility.ToJson(result.Effects));
-        Debug.Log("get transaction, parsed: " + result.ParsedData);
+        
+
+        */
+
         GetTransactionTask = null;
     }
 }
