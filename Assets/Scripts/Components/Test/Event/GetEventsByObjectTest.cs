@@ -8,7 +8,7 @@ public class GetEventsByObjectTest : MonoBehaviour
     Task<object[]> Task;
 
     // substitute your object id here
-    public string ObjectID = "0x0754d12ea8d4698cb861d11cb192574b53c19925";
+    public string ObjectID = "0x30946e8bc320488ddac2a92881345131d3bb1da3";
     
     [Range(0, 100)]
     public uint Count = 50;
@@ -16,7 +16,7 @@ public class GetEventsByObjectTest : MonoBehaviour
     void Start()
     {
         var client = gameObject.GetComponent<SuiClient>();
-        Task = client.Rpc.GetEventsByObject(ObjectID, Count);
+        Task = client.Rpc.GetEventsByObject(ObjectID, Count, 0, 9007199254740991);
     }
 
     void Update()

@@ -13,12 +13,11 @@ public class GetEventsByTimeRangeTest : MonoBehaviour
     [Range(0, 100)]
     public uint StartTime = 0;
     
-    public uint EndTime = uint.MaxValue;
 
     void Start()
     {
         var client = gameObject.GetComponent<SuiClient>();
-        Task = client.Rpc.GetEventsByTimeRange(Count, StartTime, EndTime);
+        Task = client.Rpc.GetEventsByTimeRange(Count, StartTime);
     }
 
     void Update()

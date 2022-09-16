@@ -199,7 +199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Count: 100
   StartTime: 0
-  EndTime: 4294967295
 --- !u!114 &191641343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07df571640f443091c7ba2c95b4dd81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectID: 0x0754d12ea8d4698cb861d11cb192574b53c19925
+  ObjectID: 0x30946e8bc320488ddac2a92881345131d3bb1da3
   Count: 50
 --- !u!1 &705507993
 GameObject:
