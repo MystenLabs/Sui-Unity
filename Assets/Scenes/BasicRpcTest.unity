@@ -310,7 +310,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891552717}
+  - component: {fileID: 1891552722}
   - component: {fileID: 1891552718}
+  - component: {fileID: 1891552721}
+  - component: {fileID: 1891552720}
   - component: {fileID: 1891552719}
   m_Layer: 0
   m_Name: ScratchPad
@@ -346,7 +349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4beb797d9d24a6da58b12a0dbfceed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SuiNodeUrl: http://127.0.0.1:9000
   TestObjectId: 0x3ac988444287df888b8f321683f49f4a18337f89
 --- !u!114 &1891552719
 MonoBehaviour:
@@ -357,10 +359,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 1891552716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb64aef67d64a829efa33fc65645313, type: 3}
+  m_Script: {fileID: 11500000, guid: 875920ff2aa04afb88e86586021b6b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestObject: 0x0754d12ea8d4698cb861d11cb192574b53c19925
+--- !u!114 &1891552720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891552716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4759e56937694f71a74a24817650d684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestAddress: 0x08c9e31048ce86a3538272d4adaf2069ecf26c01
+--- !u!114 &1891552721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891552716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba40167e4b846d6a9a05b6d3c1ae862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestTransactionDigest: XbyTWT8UZ1qXEM4/sdRLOzF+uwtHEEjuoj8m0VKVZFQ=
+--- !u!114 &1891552722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891552716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55344505f9a54bf7b70f78c8f5749a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SuiNodeUrl: http://127.0.0.1:9000
-  TestTransactionDigest: XbyTWT8UZ1qXEM4/sdRLOzF+uwtHEEjuoj8m0VKVZFQ=
-  TestAddress: 0x08c9e31048ce86a3538272d4adaf2069ecf26c01
-  TestObject: 0x0754d12ea8d4698cb861d11cb192574b53c19925

@@ -1,25 +1,20 @@
 using System;
 using System.Threading.Tasks;
-using SuiDotNet.Client;
 using SuiDotNet.Client.Requests;
 using UnityEngine;
 
+[RequireComponent(typeof(SuiClient))]
 public class SuiGetObjectTest : MonoBehaviour
 {
-    public SuiJsonClient Client;
     public Task<SuiObject> GetObjectTask;
 
-    // substitute your preferred Sui node endpoint here, either in code or in Unity inspector
-    public String SuiNodeUrl = "http://127.0.0.1:9000";
     // substitute your object ID here
     public String TestObjectId = "0x3ac988444287df888b8f321683f49f4a18337f89";
 
     void Start()
     {
-        var settings = new SuiClientSettings() { BaseUri = SuiNodeUrl };
-        Client = new SuiJsonClient(settings);
-        
-        GetObjectTask = Client.GetObject(TestObjectId);
+        var client = gameObject.GetComponent<SuiClient>();
+        GetObjectTask = client.Rpc.GetObject(TestObjectId);
     }
 
     void Update()

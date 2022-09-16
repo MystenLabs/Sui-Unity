@@ -4,10 +4,11 @@ using SuiDotNet.Client;
 using SuiDotNet.Client.Requests;
 using UnityEngine;
 
+[RequireComponent(typeof(SuiClient))]
 public class SuiGetTransactionsTest : MonoBehaviour
 {
     public SuiJsonClient Client;
-    public Task<object> GetTransactionTask;
+    public Task<SuiTransactionResponse> GetTransactionTask;
     public Task<SequencedTransaction[]> GetTransactionsForAddressTask;
     public Task<SequencedTransaction[]> GetTransactionsForObjectTask;
 
@@ -32,7 +33,16 @@ public class SuiGetTransactionsTest : MonoBehaviour
     {
         if (GetTransactionTask is {IsCompleted: true})
         {
-            Debug.Log("get transaction result: " + GetTransactionTask.Result);
+            var result = GetTransactionTask.Result;
+            Debug.Log("get tx - cert, digest: " + result.Certificate.TransactionDigest);
+            Debug.Log("get tx - cert, signature: " + result.Certificate.Signature);
+            Debug.Log("get tx - cert, data: " + result.Certificate.Data);
+
+            Debug.Log("get tx - cert, authSignInfo:\n" + result.Certificate.AuthoritySignInfo);
+            
+            Debug.Log("get transaction, time: " + result.Timestamp);
+            Debug.Log("get transaction, effects: " + JsonUtility.ToJson(result.Effects));
+            Debug.Log("get transaction, parsed: " + result.ParsedData);
             GetTransactionTask = null;
         }
         if (GetTransactionsForAddressTask is {IsCompleted: true})
