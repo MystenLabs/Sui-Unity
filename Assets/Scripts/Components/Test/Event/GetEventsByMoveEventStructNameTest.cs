@@ -1,16 +1,14 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using SuiDotNet.Client.Requests;
 using UnityEngine;
 
 [RequireComponent(typeof(SuiClient))]
-public class GetEventsByRecipientTest : MonoBehaviour
+public class GetEventsByMoveEventStructNameTest : MonoBehaviour
 {
     Task<object[]> Task;
 
-    // substitute your object id here
-    public OwnerType OwnerType = OwnerType.Address;
-    public string Address = "0x08c9e31048ce86a3538272d4adaf2069ecf26c01";
+    // substitute your struct name here
+    public string StructName = "0x2::devnet_nft::MintNFTEvent";
     
     [Range(0, 100)]
     public uint Count = 50;
@@ -18,9 +16,7 @@ public class GetEventsByRecipientTest : MonoBehaviour
     void Start()
     {
         var client = gameObject.GetComponent<SuiClient>();
-
-        var owner = new ObjectOwner(OwnerType, Address);
-        Task = client.Rpc.GetEventsByRecipient(owner, Count);
+        Task = client.Rpc.GetEventsByMoveEventStructName(StructName, Count);
     }
 
     void Update()
@@ -32,7 +28,7 @@ public class GetEventsByRecipientTest : MonoBehaviour
         var resLines = string.Join(",\n", (IEnumerable<object>) result);
         var resultText = $"[\n{resLines}\n]";
         
-        Debug.Log("get events by recipient result:  " + resultText);
+        Debug.Log("get events by move event struct name result:  " + resultText);
         Task = null;
     }
 }

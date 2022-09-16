@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 191641343}
   - component: {fileID: 191641344}
   - component: {fileID: 191641345}
+  - component: {fileID: 191641346}
   m_Layer: 0
   m_Name: Event
   m_TagString: Untagged
@@ -242,6 +243,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Address: 0x08c9e31048ce86a3538272d4adaf2069ecf26c01
+  Count: 50
+--- !u!114 &191641346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191641338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500224075e804cfe9671a6fb722706a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StructName: 0x2::devnet_nft::MintNFTEvent
   Count: 50
 --- !u!1 &705507993
 GameObject:
