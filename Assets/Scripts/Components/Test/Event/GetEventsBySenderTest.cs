@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using SuiDotNet.Client.Requests;
 using UnityEngine;
 
 [RequireComponent(typeof(SuiClient))]

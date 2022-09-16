@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using SuiDotNet.Client;
 using SuiDotNet.Client.Requests;
 using UnityEngine;
 
