@@ -3,7 +3,7 @@ Unity project for developing Sui's in-progress Unity SDK.
 
 ## Dependencies
 
-`SuiDotNet.Client` must be built for the `netstandard2.1` .NET target.
+[`SuiDotNet.Client`](https://github.com/stella3d/SuiDotNet) must be built for the `netstandard2.1` .NET target.
 
 This should produce 4 .DLL files to copy into in `/Assets/Plugins/`:
 
