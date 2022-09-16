@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 191641344}
   - component: {fileID: 191641345}
   - component: {fileID: 191641346}
+  - component: {fileID: 191641347}
   m_Layer: 0
   m_Name: Event
   m_TagString: Untagged
@@ -242,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9effdab8cd0b405492a16ffac7b69410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OwnerType: 1
   Address: 0x08c9e31048ce86a3538272d4adaf2069ecf26c01
   Count: 50
 --- !u!114 &191641346
@@ -257,6 +259,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StructName: 0x2::devnet_nft::MintNFTEvent
+  Count: 50
+--- !u!114 &191641347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191641338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3260ace890c4f35bc108dcf40e841e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Package: 0x2
+  Module: devnet_nft
   Count: 50
 --- !u!1 &705507993
 GameObject:
