@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 974511847}
   - component: {fileID: 974511846}
   - component: {fileID: 974511845}
+  - component: {fileID: 974511852}
   m_Layer: 0
   m_Name: Transaction
   m_TagString: Untagged
@@ -429,6 +430,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SuiNodeUrl: http://127.0.0.1:9000
+--- !u!114 &974511852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974511843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c98f9d2da242ec82e716eee54c564f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestTransactionDigests:
+  - XbyTWT8UZ1qXEM4/sdRLOzF+uwtHEEjuoj8m0VKVZFQ=
+  - pnyn2ylZCxpfHxxUTZbMCt924Jfzg+p24TEtI7Qx5bE=
+  - lCuDStZX86yDPCL8TZWWWwdkPCfyOHEY+dJ6EGwVueU=
+  - 1XpVLd9CC70kzLRHwUkZEWBEF62s32DM96FEcNhUOcg=
+  - 1b0yipd8FYznQQv12lMmbCxwKCunHhmBGz+GP28o2o4=
 --- !u!1 &1891552716
 GameObject:
   m_ObjectHideFlags: 0
