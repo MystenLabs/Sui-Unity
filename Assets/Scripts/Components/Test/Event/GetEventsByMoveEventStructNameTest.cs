@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SuiDotNet.Client.Requests;
 using UnityEngine;
 
 [RequireComponent(typeof(SuiClient))]
 public class GetEventsByMoveEventStructNameTest : MonoBehaviour
 {
-    Task<object[]> Task;
+    Task<SuiEventEnvelope[]> Task;
 
     // substitute your struct name here
     public string StructName = "0x2::devnet_nft::MintNFTEvent";

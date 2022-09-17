@@ -6,9 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(SuiClient))]
 public class GetEventsByRecipientTest : MonoBehaviour
 {
-    Task<object[]> Task;
+    Task<SuiEventEnvelope[]> Task;
 
-    // substitute your object id here
     public OwnerType OwnerType = OwnerType.Address;
     public string Address = "0x08c9e31048ce86a3538272d4adaf2069ecf26c01";
     
@@ -18,8 +17,8 @@ public class GetEventsByRecipientTest : MonoBehaviour
     void Start()
     {
         var client = gameObject.GetComponent<SuiClient>();
-
         var owner = new ObjectOwner(OwnerType, Address);
+
         Task = client.Rpc.GetEventsByRecipient(owner, Count);
     }
 
@@ -28,8 +27,7 @@ public class GetEventsByRecipientTest : MonoBehaviour
         if (Task is not {IsCompleted: true}) 
             return;
         
-        var result = Task.Result;
-        var resLines = string.Join(",\n", (IEnumerable<object>) result);
+        var resLines = string.Join(",\n", (IEnumerable<SuiEventEnvelope>) Task.Result);
         var resultText = $"[\n{resLines}\n]";
         
         Debug.Log("get events by recipient result:  " + resultText);
