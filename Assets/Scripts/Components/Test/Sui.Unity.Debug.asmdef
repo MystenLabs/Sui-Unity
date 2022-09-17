@@ -1,0 +1,22 @@
+{
+    "name": "Sui.Unity.Debug",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0090aea30e2904946a23e4bed246b66d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "SuiDotNet.Client.dll",
+        "Nethereum.JsonRpc.Client.dll",
+        "Nethereum.JsonRpc.RpcClient.dll",
+        "Common.Logging.Core.dll",
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Sui.Unity",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "SuiDotNet.Client.dll",
+        "Nethereum.JsonRpc.RpcClient.dll",
+        "Nethereum.JsonRpc.Client.dll",
+        "Newtonsoft.Json.dll",
+        "Common.Logging.Core.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
